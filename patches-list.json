@@ -1,0 +1,607 @@
+{
+  "version": "v1.1.0",
+  "appNames": {
+    "com.google.android.apps.photos": "Google Photos",
+    "com.google.android.apps.magazines": "Google News",
+    "com.rarlab.rar": "RAR",
+    "ch.protonmail.android": "Proton Mail",
+    "ginlemon.iconpackstudio": "Icon Pack Studio",
+    "com.letterboxd.letterboxd": "Letterboxd",
+    "com.cricbuzz.android": "Cricbuzz",
+    "com.disney.disneyplus": "Disney+",
+    "com.microsoft.office.officelens": "Microsoft Lens",
+    "com.soundcloud.android": "SoundCloud",
+    "jp.pxv.android": "Pixiv",
+    "com.microblink.photomath": "Photomath",
+    "com.strava": "Strava",
+    "com.tumblr": "Tumblr"
+  },
+  "patches": [
+    {
+      "name": "Add 'Give Kudos' button to 'Group Activity'",
+      "description": "Adds a button that triggers the same action as shaking your phone would.",
+      "use": true,
+      "dependencies": [
+        "ResourcePatch",
+        "BytecodePatch"
+      ],
+      "compatiblePackages": {
+        "com.strava": null
+      },
+      "options": []
+    },
+    {
+      "name": "Add media download",
+      "description": "Extends the full-screen media viewer menu with items to copy or open their URLs or download them directly.",
+      "use": true,
+      "dependencies": [
+        "ResourcePatch",
+        "BytecodePatch"
+      ],
+      "compatiblePackages": {
+        "com.strava": null
+      },
+      "options": []
+    },
+    {
+      "name": "Block Snowplow tracking",
+      "description": "Blocks Snowplow analytics. See https://snowplow.io for more information.",
+      "use": true,
+      "dependencies": [],
+      "compatiblePackages": {
+        "com.strava": null
+      },
+      "options": []
+    },
+    {
+      "name": "Change package name",
+      "description": "Appends \".morphe\" to the package name by default. Changing the package name of the app can lead to unexpected issues. This patch does not work with Reddit.",
+      "use": false,
+      "dependencies": [],
+      "compatiblePackages": null,
+      "options": [
+        {
+          "key": "packageName",
+          "title": "Package name",
+          "description": "The name of the package to rename the app to.",
+          "required": true,
+          "type": "kotlin.String",
+          "default": "Default",
+          "values": {
+            "Default": "Default"
+          }
+        },
+        {
+          "key": "updatePermissions",
+          "title": "Update permissions",
+          "description": "Update compatibility receiver permissions. Enabling this can fix installation errors, but this can also break features in certain apps.",
+          "required": false,
+          "type": "kotlin.Boolean",
+          "default": false,
+          "values": null
+        },
+        {
+          "key": "updateProviders",
+          "title": "Update providers",
+          "description": "Update provider names declared by the app. Enabling this can fix installation errors, but this can also break features in certain apps.",
+          "required": false,
+          "type": "kotlin.Boolean",
+          "default": false,
+          "values": null
+        }
+      ]
+    },
+    {
+      "name": "Disable Ad-Free Banner",
+      "description": "Disables the banner with a frog, prompting you to buy Tumblr Ad-Free.",
+      "use": true,
+      "dependencies": [
+        "BytecodePatch"
+      ],
+      "compatiblePackages": {
+        "com.tumblr": null
+      },
+      "options": []
+    },
+    {
+      "name": "Disable Quick Edit",
+      "description": "Prevents the Quick Edit prompt from popping up.",
+      "use": true,
+      "dependencies": [],
+      "compatiblePackages": {
+        "com.strava": null
+      },
+      "options": []
+    },
+    {
+      "name": "Disable Tumblr TV",
+      "description": "Removes the Tumblr TV navigation button from the bottom navigation bar.",
+      "use": true,
+      "dependencies": [
+        "BytecodePatch"
+      ],
+      "compatiblePackages": {
+        "com.tumblr": null
+      },
+      "options": []
+    },
+    {
+      "name": "Disable blog notification reminder",
+      "description": "Disables the reminder to enable notifications for blogs you visit.",
+      "use": true,
+      "dependencies": [],
+      "compatiblePackages": {
+        "com.tumblr": null
+      },
+      "options": []
+    },
+    {
+      "name": "Disable dashboard ads",
+      "description": "Disables ads in the dashboard.",
+      "use": true,
+      "dependencies": [
+        "BytecodePatch"
+      ],
+      "compatiblePackages": {
+        "com.tumblr": null
+      },
+      "options": []
+    },
+    {
+      "name": "Disable gift message popup",
+      "description": "Disables the popup suggesting to buy TumblrMart items for other people.",
+      "use": true,
+      "dependencies": [],
+      "compatiblePackages": {
+        "com.tumblr": null
+      },
+      "options": []
+    },
+    {
+      "name": "Disable in-app update",
+      "description": "Disables the in-app update check and update prompt.",
+      "use": true,
+      "dependencies": [
+        "BytecodePatch"
+      ],
+      "compatiblePackages": {
+        "com.tumblr": null
+      },
+      "options": []
+    },
+    {
+      "name": "Disable telemetry",
+      "description": "Disables SoundCloud's telemetry system.",
+      "use": true,
+      "dependencies": [],
+      "compatiblePackages": {
+        "com.soundcloud.android": [
+          "2025.05.27-release"
+        ]
+      },
+      "options": []
+    },
+    {
+      "name": "Enable CustomTabs",
+      "description": "Enables CustomTabs to open articles in your default browser.",
+      "use": true,
+      "dependencies": [],
+      "compatiblePackages": {
+        "com.google.android.apps.magazines": null
+      },
+      "options": []
+    },
+    {
+      "name": "Enable DCIM folders backup control",
+      "description": "Disables always on backup for the Camera and other DCIM folders, allowing you to control backup for each folder individually. This will make the app default to having no folders backed up.",
+      "use": false,
+      "dependencies": [],
+      "compatiblePackages": {
+        "com.google.android.apps.photos": null
+      },
+      "options": []
+    },
+    {
+      "name": "Enable offline sync",
+      "description": null,
+      "use": true,
+      "dependencies": [],
+      "compatiblePackages": {
+        "com.soundcloud.android": [
+          "2025.05.27-release"
+        ]
+      },
+      "options": []
+    },
+    {
+      "name": "Enable password login",
+      "description": "Re-enables password login after having used an OTP code.",
+      "use": true,
+      "dependencies": [],
+      "compatiblePackages": {
+        "com.strava": null
+      },
+      "options": []
+    },
+    {
+      "name": "Fix old versions",
+      "description": "Fixes old versions of the app (v33.2 and earlier) breaking due to Tumblr removing remnants of Tumblr Live from the API, which causes many requests to fail. This patch has no effect on newer versions of the app.",
+      "use": false,
+      "dependencies": [],
+      "compatiblePackages": {
+        "com.tumblr": null
+      },
+      "options": []
+    },
+    {
+      "name": "GmsCore support",
+      "description": "Allows the app to work without root by using a different package name when patched using a GmsCore instead of Google Play Services.",
+      "use": true,
+      "dependencies": [
+        "ResourcePatch",
+        "ResourcePatch",
+        "BytecodePatch"
+      ],
+      "compatiblePackages": {
+        "com.google.android.apps.magazines": null
+      },
+      "options": []
+    },
+    {
+      "name": "GmsCore support",
+      "description": "Allows the app to work without root by using a different package name when patched using a GmsCore instead of Google Play Services.",
+      "use": true,
+      "dependencies": [
+        "ResourcePatch",
+        "ResourcePatch",
+        "BytecodePatch"
+      ],
+      "compatiblePackages": {
+        "com.google.android.apps.photos": null
+      },
+      "options": []
+    },
+    {
+      "name": "Hide OneDrive migration",
+      "description": "Hides the OneDrive migration prompt when opening Microsoft Office Lens.",
+      "use": true,
+      "dependencies": [],
+      "compatiblePackages": {
+        "com.microsoft.office.officelens": null
+      },
+      "options": []
+    },
+    {
+      "name": "Hide ads",
+      "description": null,
+      "use": true,
+      "dependencies": [],
+      "compatiblePackages": {
+        "com.cricbuzz.android": [
+          "6.24.01"
+        ]
+      },
+      "options": []
+    },
+    {
+      "name": "Hide ads",
+      "description": null,
+      "use": true,
+      "dependencies": [],
+      "compatiblePackages": {
+        "com.letterboxd.letterboxd": null
+      },
+      "options": []
+    },
+    {
+      "name": "Hide ads",
+      "description": null,
+      "use": true,
+      "dependencies": [],
+      "compatiblePackages": {
+        "jp.pxv.android": [
+          "6.141.1"
+        ]
+      },
+      "options": []
+    },
+    {
+      "name": "Hide ads",
+      "description": null,
+      "use": true,
+      "dependencies": [],
+      "compatiblePackages": {
+        "com.soundcloud.android": [
+          "2025.05.27-release"
+        ]
+      },
+      "options": []
+    },
+    {
+      "name": "Hide distractions",
+      "description": "Hides elements that are not essential.",
+      "use": true,
+      "dependencies": [
+        "BytecodePatch"
+      ],
+      "compatiblePackages": {
+        "com.strava": null
+      },
+      "options": [
+        {
+          "key": "upselling",
+          "title": "Upselling",
+          "description": "Elements that suggest you subscribe.",
+          "required": true,
+          "type": "kotlin.Boolean",
+          "default": true,
+          "values": null
+        },
+        {
+          "key": "promo",
+          "title": "Promotions",
+          "description": "Elements that promote features, challenges, clubs, etc.",
+          "required": true,
+          "type": "kotlin.Boolean",
+          "default": true,
+          "values": null
+        },
+        {
+          "key": "followSuggestions",
+          "title": "Who to Follow",
+          "description": "Popular athletes, followers, people near you etc.",
+          "required": true,
+          "type": "kotlin.Boolean",
+          "default": true,
+          "values": null
+        },
+        {
+          "key": "challengeSuggestions",
+          "title": "Suggested Challenges",
+          "description": "Random challenges Strava wants you to join.",
+          "required": true,
+          "type": "kotlin.Boolean",
+          "default": true,
+          "values": null
+        },
+        {
+          "key": "joinChallenge",
+          "title": "Join Challenge",
+          "description": "Challenges your follows have joined.",
+          "required": true,
+          "type": "kotlin.Boolean",
+          "default": false,
+          "values": null
+        },
+        {
+          "key": "joinClub",
+          "title": "Joined a club",
+          "description": "Clubs your follows have joined.",
+          "required": true,
+          "type": "kotlin.Boolean",
+          "default": false,
+          "values": null
+        },
+        {
+          "key": "activityLookback",
+          "title": "Activity lookback",
+          "description": "Your activity from X years ago",
+          "required": true,
+          "type": "kotlin.Boolean",
+          "default": false,
+          "values": null
+        }
+      ]
+    },
+    {
+      "name": "Hide purchase reminder",
+      "description": "Hides the popup that reminds you to purchase the app.",
+      "use": true,
+      "dependencies": [],
+      "compatiblePackages": {
+        "com.rarlab.rar": null
+      },
+      "options": []
+    },
+    {
+      "name": "Hide update popup",
+      "description": "Prevents the update popup from showing up.",
+      "use": true,
+      "dependencies": [
+        "BytecodePatch"
+      ],
+      "compatiblePackages": {
+        "com.microblink.photomath": null
+      },
+      "options": []
+    },
+    {
+      "name": "Override certificate pinning",
+      "description": "Overrides certificate pinning, allowing to inspect traffic via a proxy. This patch does not work with Reddit.",
+      "use": false,
+      "dependencies": [],
+      "compatiblePackages": null,
+      "options": []
+    },
+    {
+      "name": "Overwrite media upload parameters",
+      "description": "Overwrites the compression, resize and trim media (images and videos) parameters returned by Strava's server before upload.",
+      "use": true,
+      "dependencies": [],
+      "compatiblePackages": {
+        "com.strava": null
+      },
+      "options": [
+        {
+          "key": "compressionQuality",
+          "title": "Compression quality (percent)",
+          "description": "This is used as the JPEG quality setting (≤ 100).",
+          "required": false,
+          "type": "kotlin.Int",
+          "default": null,
+          "values": null
+        },
+        {
+          "key": "maxDuration",
+          "title": "Max duration (seconds)",
+          "description": "The maximum length (≤ 3600) of a video before it gets trimmed.",
+          "required": false,
+          "type": "kotlin.Long",
+          "default": null,
+          "values": null
+        },
+        {
+          "key": "maxSize",
+          "title": "Max size (pixels)",
+          "description": "The image gets resized so that the smaller dimension (width/height) does not exceed this value (≤ 10000).",
+          "required": false,
+          "type": "kotlin.Int",
+          "default": null,
+          "values": null
+        }
+      ]
+    },
+    {
+      "name": "Remove 'Sent from' signature",
+      "description": "Removes the 'Sent from Proton Mail mobile' signature from emails.",
+      "use": true,
+      "dependencies": [],
+      "compatiblePackages": {
+        "ch.protonmail.android": [
+          "4.15.0"
+        ]
+      },
+      "options": []
+    },
+    {
+      "name": "Remove free accounts limit",
+      "description": "Removes the limit for maximum free accounts logged in.",
+      "use": true,
+      "dependencies": [],
+      "compatiblePackages": {
+        "ch.protonmail.android": [
+          "4.15.0"
+        ]
+      },
+      "options": []
+    },
+    {
+      "name": "Skip ads",
+      "description": "Automatically skips ads.",
+      "use": true,
+      "dependencies": [],
+      "compatiblePackages": {
+        "com.disney.disneyplus": null
+      },
+      "options": []
+    },
+    {
+      "name": "Spoof device ID",
+      "description": "Spoofs device ID to mitigate manual bans by developers.",
+      "use": true,
+      "dependencies": [
+        "BytecodePatch"
+      ],
+      "compatiblePackages": {
+        "com.microblink.photomath": null
+      },
+      "options": []
+    },
+    {
+      "name": "Spoof features",
+      "description": "Spoofs the device to enable Google Pixel exclusive features, including unlimited storage.",
+      "use": true,
+      "dependencies": [
+        "BytecodePatch"
+      ],
+      "compatiblePackages": {
+        "com.google.android.apps.photos": null
+      },
+      "options": [
+        {
+          "key": "featuresToEnable",
+          "title": "Features to enable",
+          "description": "Google Pixel exclusive features to enable. Features up to Pixel XL enable the unlimited storage feature.",
+          "required": true,
+          "type": "kotlin.collections.List<kotlin.String>",
+          "default": [
+            "com.google.android.apps.photos.NEXUS_PRELOAD",
+            "com.google.android.apps.photos.nexus_preload"
+          ],
+          "values": null
+        },
+        {
+          "key": "featuresToDisable",
+          "title": "Features to disable",
+          "description": "Google Pixel exclusive features to disable.Features after Pixel XL may have to be disabled for unlimited storage depending on the device.",
+          "required": true,
+          "type": "kotlin.collections.List<kotlin.String>",
+          "default": [
+            "com.google.android.apps.photos.PIXEL_2017_PRELOAD",
+            "com.google.android.apps.photos.PIXEL_2018_PRELOAD",
+            "com.google.android.apps.photos.PIXEL_2019_MIDYEAR_PRELOAD",
+            "com.google.android.apps.photos.PIXEL_2019_PRELOAD",
+            "com.google.android.feature.PIXEL_2020_MIDYEAR_EXPERIENCE",
+            "com.google.android.feature.PIXEL_2020_EXPERIENCE",
+            "com.google.android.feature.PIXEL_2021_MIDYEAR_EXPERIENCE",
+            "com.google.android.feature.PIXEL_2021_EXPERIENCE",
+            "com.google.android.feature.PIXEL_2022_MIDYEAR_EXPERIENCE",
+            "com.google.android.feature.PIXEL_2022_EXPERIENCE",
+            "com.google.android.feature.PIXEL_2023_MIDYEAR_EXPERIENCE",
+            "com.google.android.feature.PIXEL_2023_EXPERIENCE",
+            "com.google.android.feature.PIXEL_2024_MIDYEAR_EXPERIENCE",
+            "com.google.android.feature.PIXEL_2024_EXPERIENCE",
+            "com.google.android.feature.PIXEL_2025_MIDYEAR_EXPERIENCE",
+            "com.google.android.feature.PIXEL_2025_EXPERIENCE"
+          ],
+          "values": null
+        }
+      ]
+    },
+    {
+      "name": "Unlock app icons",
+      "description": null,
+      "use": true,
+      "dependencies": [],
+      "compatiblePackages": {
+        "com.letterboxd.letterboxd": null
+      },
+      "options": []
+    },
+    {
+      "name": "Unlock plus",
+      "description": null,
+      "use": true,
+      "dependencies": [
+        "BytecodePatch",
+        "BytecodePatch"
+      ],
+      "compatiblePackages": {
+        "com.microblink.photomath": null
+      },
+      "options": []
+    },
+    {
+      "name": "Unlock pro",
+      "description": null,
+      "use": true,
+      "dependencies": [],
+      "compatiblePackages": {
+        "ginlemon.iconpackstudio": [
+          "2.2 build 016"
+        ]
+      },
+      "options": []
+    },
+    {
+      "name": "Unlock subscription features",
+      "description": "Unlocks \"Routes\", \"Matched Runs\" and \"Segment Efforts\".",
+      "use": true,
+      "dependencies": [],
+      "compatiblePackages": {
+        "com.strava": null
+      },
+      "options": []
+    }
+  ]
+}

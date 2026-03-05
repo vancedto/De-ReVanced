@@ -1,0 +1,7 @@
+{
+  "created_at": "2026-03-05T00:00:00",
+  "description": "## v1.1.0\n\n- Fixed all the Google Photos related issues\n- Letterboxd patch is now working\n- SoundCloud patch is now working\n- Newly added: Tumblr\n",
+  "download_url": "https://github.com/RookieEnough/De-ReVanced/releases/download/v1.1.0/patches-1.1.0.mpp",
+  "signature_download_url": "",
+  "version": "1.1.0"
+}

@@ -1,0 +1,23 @@
+/*
+ * Forked from:
+ * https://github.com/ReVanced/revanced-patches/blob/6b06b9d1328b971a06d10b4247f4c10f050e4f61/patches/src/main/kotlin/app/revanced/patches/strava/privacy/BlockSnowplowTrackingPatch.kt
+ */
+
+package app.morphe.patches.strava.privacy
+
+import app.morphe.patcher.patch.bytecodePatch
+import app.morphe.util.returnEarly
+
+@Suppress("unused")
+val blockSnowplowTrackingPatch = bytecodePatch(
+    name = "Block Snowplow tracking",
+    description = "Blocks Snowplow analytics. See https://snowplow.io for more information.",
+) {
+    compatibleWith("com.strava")
+
+    execute {
+        // Keep events list empty, otherwise sent to https://c.strava.com/com.snowplowanalytics.snowplow/tp2.
+        InsertEventFingerprint.method.returnEarly()
+    }
+}
+
