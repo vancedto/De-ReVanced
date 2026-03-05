@@ -39,47 +39,6 @@
 
 ## Supported Apps & Patches
 
-<div align="center">
-
-# De-ReVanced
-
-### *"ReVanced calls forks unofficial while calling itself official—that's not open source, that's hypocrisy. Time to De-ReVanced your phone."*
-
-**ReVanced patches, migrated to Morphe. Community-driven. GPL-compliant. No gatekeeping.**
-
-<br>
-
-[![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)
-[![Built for Morphe](https://img.shields.io/badge/Built%20for-Morphe-1E5AA8?style=flat-square)](https://morphe.software)
-[![Kotlin](https://img.shields.io/badge/Kotlin-1.9+-7F52FF?style=flat-square&logo=kotlin)](https://kotlinlang.org)
-[![Android](https://img.shields.io/badge/Platform-Android-3DDC84?style=flat-square&logo=android)](https://android.com)
-[![Gradle](https://img.shields.io/badge/Gradle-8.x-02303A?style=flat-square&logo=gradle)](https://gradle.org)
-[![Patches](https://img.shields.io/badge/Patches-13%20Apps-success?style=flat-square)](#supported-apps--patches)
-
-</div>
-
-<p align="center">
-  <a href="https://www.buymeacoffee.com/rookiez" target="_blank">
-    <img src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png" width="120" alt="Buy Me A Coffee">
-  </a>
-</p>
-
----
-
-## About
-
-**De-ReVanced** is a curated collection of patches that have been migrated from [ReVanced](https://github.com/ReVanced/revanced-patches) to [Morphe](https://morphe.software)—a community-driven, open-source alternative for patching Android apps.
-
-### Why De-ReVanced?
-
-- **ReVanced labels community forks as "unofficial"** while positioning itself as the official project—despite being a fork of Vanced. The hypocrisy is real: if forks are unofficial, so is ReVanced.
-- **Morphe** is built on transparency, proper GPL compliance, and community collaboration—without the gatekeeping.
-- **These patches** are the same functionality you know, adapted for Morphe's patcher ecosystem. No lock-in. No drama.
-
----
-
-## Supported Apps & Patches
-
 | App | Package | Patches |
 | :--- | :--- | :--- |
 | Cricbuzz | `com.cricbuzz.android` | <ul><li>Disable ads</li><li>Extension</li></ul> |
