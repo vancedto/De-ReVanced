@@ -88,6 +88,9 @@ private fun generatePatchList(version: String, patches: Set<Patch<*>>) {
         "com.microblink.photomath" to "Photomath",
         "com.strava" to "Strava",
         "com.tumblr" to "Tumblr",
+        "com.amazon.mShop.android.shopping" to "Amazon Shopping",
+        "com.nis.app" to "Inshorts",
+        "com.facebook.orca" to "Messenger",
     )
 
     val patchesMap = patches.sortedBy { it.name }.map {

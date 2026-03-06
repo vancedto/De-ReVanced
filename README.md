@@ -56,7 +56,6 @@
 | Strava | `com.strava` | <ul><li>Group kudos</li><li>Hide distractions</li><li>Media download</li><li>Media upload</li><li>Disable quick edit</li><li>Password login</li><li>Block tracking</li><li>Unlock subscription</li><li>Disable upsell</li></ul> |
 | Tumblr | `com.tumblr` | <ul><li>Disable ads</li><li>Disable Ad-Free Banner</li><li>Disable in-app update</li><li>Disable blog notification reminder</li><li>Disable gift message popup</li><li>Disable Tumblr TV</li><li>Fix old versions</li><li>Override feature flags</li></ul> |
 
-
 ---
 
 ## GPL Compliance

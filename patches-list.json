@@ -1,5 +1,5 @@
 {
-  "version": "1.0.0",
+  "version": "v1.2.0",
   "appNames": {
     "com.google.android.apps.photos": "Google Photos",
     "com.google.android.apps.magazines": "Google News",
@@ -14,7 +14,10 @@
     "jp.pxv.android": "Pixiv",
     "com.microblink.photomath": "Photomath",
     "com.strava": "Strava",
-    "com.tumblr": "Tumblr"
+    "com.tumblr": "Tumblr",
+    "com.amazon.mShop.android.shopping": "Amazon Shopping",
+    "com.nis.app": "Inshorts",
+    "com.facebook.orca": "Messenger"
   },
   "patches": [
     {
@@ -40,6 +43,16 @@
       ],
       "compatiblePackages": {
         "com.strava": null
+      },
+      "options": []
+    },
+    {
+      "name": "Always allow deep-linking",
+      "description": "Open Amazon links, even if the app is not set to handle Amazon links.",
+      "use": true,
+      "dependencies": [],
+      "compatiblePackages": {
+        "com.amazon.mShop.android.shopping": null
       },
       "options": []
     },
@@ -182,6 +195,16 @@
       "options": []
     },
     {
+      "name": "Disable typing indicator",
+      "description": "Disables the indicator while typing a message.",
+      "use": true,
+      "dependencies": [],
+      "compatiblePackages": {
+        "com.facebook.orca": null
+      },
+      "options": []
+    },
+    {
       "name": "Enable CustomTabs",
       "description": "Enables CustomTabs to open articles in your default browser.",
       "use": true,
@@ -262,6 +285,16 @@
       "options": []
     },
     {
+      "name": "Hide Facebook button",
+      "description": "Hides the Facebook button in the top toolbar.",
+      "use": true,
+      "dependencies": [],
+      "compatiblePackages": {
+        "com.facebook.orca": null
+      },
+      "options": []
+    },
+    {
       "name": "Hide OneDrive migration",
       "description": "Hides the OneDrive migration prompt when opening Microsoft Office Lens.",
       "use": true,
@@ -280,6 +313,16 @@
         "com.cricbuzz.android": [
           "6.24.01"
         ]
+      },
+      "options": []
+    },
+    {
+      "name": "Hide ads",
+      "description": null,
+      "use": true,
+      "dependencies": [],
+      "compatiblePackages": {
+        "com.nis.app": null
       },
       "options": []
     },
@@ -394,6 +437,26 @@
       ]
     },
     {
+      "name": "Hide inbox ads",
+      "description": "Hides ads in inbox.",
+      "use": true,
+      "dependencies": [],
+      "compatiblePackages": {
+        "com.facebook.orca": null
+      },
+      "options": []
+    },
+    {
+      "name": "Hide inbox subtabs",
+      "description": "Hides Home and Channels tabs between active now tray and chats.",
+      "use": true,
+      "dependencies": [],
+      "compatiblePackages": {
+        "com.facebook.orca": null
+      },
+      "options": []
+    },
+    {
       "name": "Hide purchase reminder",
       "description": "Hides the popup that reminds you to purchase the app.",
       "use": true,
@@ -470,6 +533,18 @@
         "ch.protonmail.android": [
           "4.15.0"
         ]
+      },
+      "options": []
+    },
+    {
+      "name": "Remove Meta AI",
+      "description": "Removes UI elements related to Meta AI.",
+      "use": true,
+      "dependencies": [
+        "BytecodePatch"
+      ],
+      "compatiblePackages": {
+        "com.facebook.orca": null
       },
       "options": []
     },
